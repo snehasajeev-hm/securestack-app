@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="X-Frame-Options" content="DENY"/>
+  <meta http-equiv="Referrer-Policy" content="no-referrer"/>
+  <title>SecureStack | My Deployed App</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+    header {
+      background: #1a365d;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 1.4rem; letter-spacing: 1px; }
+    nav a {
+      color: #90cdf4;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto 2rem; }
+    .badge {
+      display: inline-block;
+      background: #48bb78;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0.3rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid #2b6cb0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .card h3 { color: #2b6cb0; margin-bottom: 0.5rem; font-size: 1rem; }
+    .card p { font-size: 0.9rem; color: #4a5568; line-height: 1.6; }
+    .security-section {
+      background: #ebf8ff;
+      border: 1px solid #bee3f8;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+    }
+    .security-section h2 { color: #2c5282; margin-bottom: 1rem; }
+    .security-list { list-style: none; }
+    .security-list li {
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      color: #2d3748;
+      border-bottom: 1px solid #bee3f8;
+    }
+    .security-list li:last-child { border: none; }
+    .tick { color: #38a169; font-weight: bold; margin-right: 8px; }
+    footer {
+      background: #1a365d;
+      color: #90cdf4;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+    /* Input validation demo */
+    .demo-section {
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+    .demo-section h2 { color: #2c5282; margin-bottom: 1rem; }
+    .input-group { display: flex; gap: 10px; flex-wrap: wrap; }
+    .input-group input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.6rem 1rem;
+      border: 2px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .input-group input:focus { border-color: #2b6cb0; }
+    .input-group button {
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    #result-msg {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .success { color: #276749; }
+    .error { color: #c53030; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔒 SecureStack App</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#security">Security</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Deployed. Secured. Demonstrated.</h2>
+  <p>This application was built and deployed as part of the FYUGP Summer Internship at TIPSR Solutions Ltd — showcasing secure cloud deployment practices.</p>
+  <span class="badge">✅ HTTPS Enabled</span>
+  <span class="badge">🛡️ CSP Headers Active</span>
+  <span class="badge">🔐 Input Validated</span>
+</div>
+
+<div class="cards" id="about">
+  <div class="card">
+    <h3>🚀 Platform</h3>
+    <p>Deployed on Netlify with continuous deployment from GitHub. Accessible globally via a public HTTPS URL.</p>
+  </div>
+  <div class="card">
+    <h3>🌐 Availability</h3>
+    <p>Hosted on Netlify's global CDN — ensuring high availability and fast load times from any location.</p>
+  </div>
+  <div class="card">
+    <h3>🔒 Encryption</h3>
+    <p>All traffic is encrypted using TLS/SSL (HTTPS). HTTP connections are automatically redirected to HTTPS.</p>
+  </div>
+  <div class="card">
+    <h3>📋 Access Control</h3>
+    <p>Deployment access is restricted via GitHub permissions and Netlify team controls with 2FA enabled.</p>
+  </div>
+</div>
+
+<div class="security-section" id="security">
+  <h2>🛡️ Security Measures Implemented</h2>
+  <ul class="security-list">
+    <li><span class="tick">✔</span> HTTPS / TLS encryption enforced on all connections</li>
+    <li><span class="tick">✔</span> HTTP Strict Transport Security (HSTS) header enabled</li>
+    <li><span class="tick">✔</span> X-Frame-Options: DENY — prevents clickjacking</li>
+    <li><span class="tick">✔</span> X-Content-Type-Options: nosniff — prevents MIME sniffing</li>
+    <li><span class="tick">✔</span> Referrer-Policy: no-referrer — limits information leakage</li>
+    <li><span class="tick">✔</span> Content Security Policy (CSP) — restricts external resource loading</li>
+    <li><span class="tick">✔</span> Input validation on all user-facing fields</li>
+    <li><span class="tick">✔</span> No sensitive data stored in localStorage or cookies</li>
+  </ul>
+</div>
+
+<div class="demo-section" id="contact">
+  <h2>📬 Contact Form (with Input Validation)</h2>
+  <p style="margin-bottom:1rem; color:#4a5568; font-size:0.9rem;">This form demonstrates client-side input validation — one of the key security measures.</p>
+  <div class="input-group">
+    <input type="email" id="email-input" placeholder="Enter your email address" maxlength="100"/>
+    <button onclick="validateEmail()">Submit</button>
+  </div>
+  <div id="result-msg"></div>
+</div>
+
+<footer>
+  <p>SecureStack App &mdash; FYUGP Summer Internship Task &mdash; Deployed on Netlify &mdash; &copy; 2025</p>
+</footer>
+
+<script>
+  function validateEmail() {
+    const input = document.getElementById('email-input');
+    const msg = document.getElementById('result-msg');
+    const val = input.value.trim();
+    // Basic input sanitization check
+    const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    if (!val) {
+      msg.textContent = '⚠️ Please enter an email address.';
+      msg.className = 'error';
+    } else if (!emailRegex.test(val)) {
+      msg.textContent = '❌ Invalid email format. Please check and try again.';
+      msg.className = 'error';
+    } else {
+      msg.textContent = '✅ Valid email received. Input validation passed successfully!';
+      msg.className = 'success';
+    }
+  }
+</script>
+
+</body>
+</html>
